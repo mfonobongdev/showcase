@@ -3,7 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 
 const inter = localFont({
-	src: "../public/fonts/inter/InterVariable.woff2",
+	src: "../fonts/inter/InterVariable.woff2",
 	variable: "--font-inter",
 	weight: "100 200 300 400 500 600 700 800 900",
 	style: "normal",
@@ -12,22 +12,22 @@ const inter = localFont({
 const openRunde = localFont({
 	src: [
 		{
-			path: "../public/fonts/OpenRunde-Regular.woff2",
+			path: "../fonts/open-runde/OpenRunde-Regular.woff2",
 			weight: "400",
 			style: "normal",
 		},
 		{
-			path: "../public/fonts/OpenRunde-Medium.woff2",
+			path: "../fonts/open-runde/OpenRunde-Medium.woff2",
 			weight: "500",
 			style: "medium",
 		},
 		{
-			path: "../public/fonts/OpenRunde-SemiBold.woff2",
+			path: "../fonts/open-runde/OpenRunde-SemiBold.woff2",
 			weight: "600",
 			style: "semibold",
 		},
 		{
-			path: "../public/fonts/OpenRunde-Bold.woff2",
+			path: "../fonts/open-runde/OpenRunde-Bold.woff2",
 			weight: "700",
 			style: "bold",
 		},
