@@ -1,5 +1,3 @@
-import "./wordle.css";
-
 export default function WordleLayout({
 	children,
 }: {
