@@ -2,8 +2,9 @@
 
 import React from "react";
 import Board from "./board";
-import GameInput from "./game-input";
+import GameForm from "./game-form";
 import Header from "./header";
+import checkGuess, { type GuessResult } from "./utils/check-guess";
 import WORDS from "./utils/data";
 import sample from "./utils/sample";
 
@@ -14,24 +15,30 @@ console.info({ answer });
 
 export type Guess = {
 	id: string;
-	content: string;
+	content: GuessResult[];
 };
 
 export default function Wordle() {
 	const [guesses, setGuesses] = React.useState<Guess[]>([]);
 
 	function handleAddGuess(guess: string) {
+		const guessResults = checkGuess(guess, answer);
+
+		if (!guessResults) {
+			return;
+		}
+
 		setGuesses((prevGuesses) => [
 			...prevGuesses,
-			{ id: crypto.randomUUID(), content: guess },
+			{ id: crypto.randomUUID(), content: guessResults },
 		]);
 	}
 
 	return (
-		<div className="grid h-screen grid-rows-[auto_1fr_auto] justify-items-center font-open-runde">
+		<div className="grid h-screen grid-rows-[max-content_1fr_max-content] justify-items-center font-open-runde">
 			<Header />
 			<Board guesses={guesses} />
-			<GameInput handleAddGuess={handleAddGuess} />
+			<GameForm handleAddGuess={handleAddGuess} />
 		</div>
 	);
 }

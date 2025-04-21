@@ -10,6 +10,7 @@
     "lint:fix": "biome check --write ."
   },
   "dependencies": {
+    "classnames": "^2.5.1",
     "formik": "^2.4.6",
     "motion": "^12.7.4",
     "next": "15.3.1",

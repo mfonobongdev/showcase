@@ -1,4 +1,14 @@
-export default function checkGuess(guess: string, answer: string) {
+export type GuessStatus = "incorrect" | "correct" | "misplaced";
+
+export type GuessResult = {
+	letter: string;
+	status: GuessStatus;
+};
+
+export default function checkGuess(
+	guess: string,
+	answer: string,
+): GuessResult[] | null {
 	// This constant is a placeholder that indicates we've successfully
 	// dealt with this character (it's correct, or misplaced).
 	const SOLVED_CHAR = "✓";
@@ -10,7 +20,7 @@ export default function checkGuess(guess: string, answer: string) {
 	const guessChars = guess.toUpperCase().split("");
 	const answerChars = answer.split("");
 
-	const result = [];
+	const result: GuessResult[] = [];
 
 	// Step 1: Look for correct letters.
 	for (let i = 0; i < guessChars.length; i++) {
@@ -31,7 +41,7 @@ export default function checkGuess(guess: string, answer: string) {
 			continue;
 		}
 
-		let status = "incorrect";
+		let status: GuessStatus = "incorrect";
 		const misplacedIndex = answerChars.findIndex(
 			(char: string) => char === guessChars[i],
 		);

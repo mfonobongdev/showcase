@@ -3,6 +3,7 @@
 import { Form, Formik, useField, useFormikContext } from "formik";
 import type React from "react";
 import * as Yup from "yup";
+
 const guessValidationSchema = Yup.object({
 	guess: Yup.string()
 		.required("Guess is required")
@@ -10,7 +11,7 @@ const guessValidationSchema = Yup.object({
 		.max(5, "Guess must be 5 characters long"),
 });
 
-export default function GameInput({
+export default function GameForm({
 	handleAddGuess,
 }: {
 	handleAddGuess: (guess: string) => void;
