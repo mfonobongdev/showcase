@@ -13,8 +13,10 @@ const guessValidationSchema = Yup.object({
 
 export default function GameForm({
 	handleAddGuess,
+	gameState,
 }: {
 	handleAddGuess: (guess: string) => void;
+	gameState: "playing" | "won" | "lost";
 }) {
 	return (
 		<div className="flex flex-col items-center justify-center gap-2 p-5">
@@ -27,6 +29,10 @@ export default function GameForm({
 				validateOnChange={false}
 				validateOnBlur={false}
 				onSubmit={(values, { resetForm, setSubmitting }) => {
+					if (gameState === "won" || gameState === "lost") {
+						return;
+					}
+
 					handleAddGuess(values.guess);
 					setSubmitting(false);
 					resetForm();
