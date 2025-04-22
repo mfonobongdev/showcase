@@ -10,6 +10,7 @@
     "lint:fix": "biome check --write ."
   },
   "dependencies": {
+    "@uidotdev/usehooks": "^2.4.1",
     "classnames": "^2.5.1",
     "formik": "^2.4.6",
     "motion": "^12.7.4",
