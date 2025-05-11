@@ -10,6 +10,7 @@
     "lint:fix": "biome check --write ."
   },
   "dependencies": {
+    "@heroicons/react": "^2.2.0",
     "@uidotdev/usehooks": "^2.4.1",
     "classnames": "^2.5.1",
     "formik": "^2.4.6",
@@ -18,6 +19,7 @@
     "radix-ui": "^1.4.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "react-merge-refs": "^3.0.2",
     "yup": "^1.6.1"
   },
   "devDependencies": {
