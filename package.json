@@ -12,6 +12,7 @@
   "dependencies": {
     "@heroicons/react": "^2.2.0",
     "@uidotdev/usehooks": "^2.4.1",
+    "@use-it/interval": "^1.0.0",
     "classnames": "^2.5.1",
     "formik": "^2.4.6",
     "motion": "^12.7.4",
